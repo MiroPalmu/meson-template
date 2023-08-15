@@ -53,10 +53,11 @@ foreach pkg_name, conan_ref : conan_pkgs
     project_dependencies += dependency(pkg_name, method: 'cmake', cmake_module_path: module_path)
 endforeach
 
-
 ####################################################################################################
 # Subdirectors
 ####################################################################################################
+
+subdir('docs')
 subdir('include')
 subdir('src')
 subdir('tests')
