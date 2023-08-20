@@ -8,7 +8,10 @@ if not doxygen.found()
     subdir_done()
 endif
 
-# Definfe variables used in Doxyfile.in
+# Save this path so it can be used in sphinx/meson.build
+doxygen_output_dir = meson.current_build_dir()
+
+# Define variables used in Doxyfile.in
 doxygen_config_data = configuration_data({
     'NAME' : meson.project_name(),
     'VERSION' : meson.project_version(),
@@ -19,7 +22,7 @@ doxygen_config_data = configuration_data({
         meson.project_source_root() + '/src',
         meson.project_source_root() + '/include'
     ]),
-    'OUTPUT_DIRECTORY' : meson.current_build_dir()
+    'OUTPUT_DIRECTORY' : doxygen_output_dir
 })
 
 if find_program('dot', required : false).found()
@@ -36,8 +39,8 @@ doxyfile = configure_file(
 )
 
 
-html_target = custom_target(
-    'docs_target',
+doxygen_html_target = custom_target(
+    'doxygen_html_target',
     input: doxyfile,
     output: 'html',
     command: [doxygen, '@INPUT@'],
