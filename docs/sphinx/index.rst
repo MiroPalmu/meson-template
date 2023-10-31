@@ -5,13 +5,13 @@ Welcome to geosci's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   documentation
 
 
-Indices and tables
+Index and search
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 
 
