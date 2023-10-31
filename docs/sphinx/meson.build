@@ -26,5 +26,6 @@ sphinx_html_target = custom_target(
         # Output dir
         '@OUTPUT@',
     ],
-    install : false
+    install : false,
+    build_always_stale: true
 )

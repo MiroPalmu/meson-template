@@ -27,3 +27,15 @@ if not breathe.found()
 endif
 
 subdir('sphinx')
+
+# Phony targets
+
+alias_target(
+    'doxygen',
+    doxygen_html_target
+)
+
+alias_target(
+    'sphinx',
+    sphinx_html_target
+)

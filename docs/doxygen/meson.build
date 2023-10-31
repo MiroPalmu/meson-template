@@ -44,5 +44,6 @@ doxygen_html_target = custom_target(
     input: doxyfile,
     output: 'html',
     command: [doxygen, '@INPUT@'],
-    install: false
+    install: false,
+    build_always_stale: true
 )
