@@ -12,7 +12,8 @@ foreach test_name : single_threaded_unit_tests
             test_name,
             files(test_name + '.cpp'),
             include_directories: project_include_directories,
-            dependencies: project_dependencies
+            dependencies: project_dependencies,
+            override_options: ['optimization=0'],
         )
     }
 
