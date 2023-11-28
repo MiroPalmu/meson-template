@@ -47,3 +47,8 @@ doxygen_html_target = custom_target(
     install: false,
     build_always_stale: true
 )
+
+alias_target(
+    'doxygen',
+    doxygen_html_target
+)

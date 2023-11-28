@@ -29,3 +29,8 @@ sphinx_html_target = custom_target(
     install : false,
     build_always_stale: true
 )
+
+alias_target(
+    'sphinx',
+    sphinx_html_target
+)
