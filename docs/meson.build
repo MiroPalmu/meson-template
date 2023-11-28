@@ -1,11 +1,17 @@
 doxygen = find_program('doxygen', version : '>=1.9.1', required : false)
+dot = find_program('dot', required : false)
+
 if not doxygen.found()
     message('Skipping doxygen and sphinx targets due to missing Doxygen')
     subdir_done()
 endif
 
-subdir('doxygen')
+if not dot.found()
+    message('Skipping doxygen and sphinx targets due to missing Dot')
+    subdir_done()
+endif
 
+subdir('doxygen')
 
 sphinx = find_program('sphinx-build', version : '>=4.3.2', required: false)
 

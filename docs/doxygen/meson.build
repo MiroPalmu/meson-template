@@ -25,12 +25,6 @@ doxygen_config_data = configuration_data({
     'OUTPUT_DIRECTORY' : doxygen_output_dir
 })
 
-if find_program('dot', required : false).found()
-    doxygen_config_data.set('HAVE_DOT', 'YES')
-else
-    doxygen_config_data.set('HAVE_DOT', 'NO')
-endif
-
 doxyfile = configure_file(
     input: 'Doxyfile.in',
     output: 'Doxyfile',
