@@ -16,7 +16,7 @@ sphinx_html_target = custom_target(
     'sphinx_html_target',
     output : 'build',
     depends : doxygen_html_target,
-    depend_files : [sphinx_config_file, files('index.rst')],
+    depend_files : [ sphinx_config_file ],
     command : [
         sphinx, '-b', 'html',
         # Give folder of generated conf.py as -c argument to sphinx
