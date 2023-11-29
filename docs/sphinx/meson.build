@@ -2,8 +2,20 @@ sphinx_configuration_data = configuration_data({
     'PROJECT' : meson.project_name(),
     'AUTHOR' : 'Miro Palmu',
     'VERSION' : meson.project_version(),
-    'DOXYGEN_XML_OUTPUT_DIR' : doxygen_output_dir + '/xml'
+    'DOXYGEN_XML_OUTPUT_DIR' : doxygen_output_dir + '/xml',
+    'THEME' : 'alabaster',
 })
+
+# Check if Read the Docs theme is installed using python module of meson
+rtd_theme = import('python').find_installation(
+    'python3',
+    modules : ['sphinx_rtd_theme'],
+    required : false
+)
+
+if rtd_theme.found()
+    sphinx_configuration_data.set('THEME', 'sphinx_rtd_theme')
+endif
 
 sphinx_config_file = configure_file(
     input: 'conf.py.in',
