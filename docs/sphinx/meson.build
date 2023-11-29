@@ -6,14 +6,24 @@ sphinx_configuration_data = configuration_data({
     'THEME' : 'alabaster',
 })
 
-# Check if Read the Docs theme is installed using python module of meson
-rtd_theme = import('python').find_installation(
+# Check if different themes is installed using python module of meson
+py = import('python')
+
+furo_theme = py.find_installation(
+    'python3',
+    modules : ['furo'],
+    required : false
+)
+
+rtd_theme = py.find_installation(
     'python3',
     modules : ['sphinx_rtd_theme'],
     required : false
 )
 
-if rtd_theme.found()
+if furo_theme.found()
+    sphinx_configuration_data.set('THEME', 'furo')
+elif rtd_theme.found()
     sphinx_configuration_data.set('THEME', 'sphinx_rtd_theme')
 endif
 
