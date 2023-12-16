@@ -6,6 +6,7 @@ Welcome to template documentation!
    :caption: Contents:
 
    developing_guidelines
+   doxygen_index
 
 
 Index and search
