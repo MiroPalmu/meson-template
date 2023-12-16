@@ -1,3 +1,4 @@
+///@file
 #include "foo.hpp"
 
 namespace foo {

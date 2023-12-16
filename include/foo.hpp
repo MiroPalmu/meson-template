@@ -1,3 +1,4 @@
+/// @file
 #include <string>
 
 namespace foo {
