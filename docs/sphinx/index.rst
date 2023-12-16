@@ -1,5 +1,5 @@
-Welcome to geosci's documentation!
-==============================================
+Welcome to template documentation!
+==================================
 
 .. toctree::
    :maxdepth: 2
