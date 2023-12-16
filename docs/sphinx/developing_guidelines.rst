@@ -16,7 +16,7 @@ To generate Sphinx documentation
 build **sphinx** target.
 
 Commit messages
-===============
+---------------
 
 Commit messages follow `Conventional Commits v1.0.0`_.
 
