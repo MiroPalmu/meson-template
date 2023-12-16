@@ -12,7 +12,7 @@ project_include_directories += include_directories('include')
 # Subprojects (using meson wraps)
 ut = subproject('ut')
 
-project_dependencies = [dependency('ut')]
+project_dependencies = []
 
 # Project sources
 project_sources = []

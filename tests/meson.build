@@ -1,3 +1,10 @@
+# Test dependencies
+
+subproject('ut')
+
+test_dependencies = project_dependencies
+test_dependencies += dependency('ut')
+
 # List of tests that can run in parallel
 single_threaded_unit_tests = [
     'test_unit_test'
@@ -12,7 +19,7 @@ foreach test_name : single_threaded_unit_tests
             test_name,
             files(test_name + '.cpp'),
             include_directories: project_include_directories,
-            dependencies: project_dependencies,
+            dependencies: test_dependencies,
             override_options: ['optimization=0'],
         )
     }
