@@ -5,7 +5,7 @@ Welcome to geosci's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   documentation
+   developing_guidelines
 
 
 Index and search

@@ -1,5 +1,5 @@
-Documentation
-==============================================
+Developing guidelines
+=====================
 
 Doxygen documentation style is followed.
 
