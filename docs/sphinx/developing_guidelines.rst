@@ -15,6 +15,26 @@ To generate Sphinx documentation
 (``<build_dir>/docs/sphinx/build/index.html``)
 build **sphinx** target.
 
+comiple_commands.json
+---------------------
+
+Meson ninja backend generates automatically
+``<build_dir>/compile_commands.json``
+
+However this does not contain entries for header
+files, only for source files (c++). This means
+that tools utilizing compile_commands.json might
+not work for header files.
+
+To generate ``<project_root>/compile_comands.json``
+containing entries also for header files build
+**compdb** target.
+
+**compdb** target requires that ``compdb`` cli tool
+is found and that ninja backend for meson is used.
+
+``compdb`` can be installed with ``pip install compdb``
+
 Commit messages
 ---------------
 
